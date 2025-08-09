@@ -16,89 +16,47 @@ A comprehensive command-line Java application that provides seamless number syst
 - User-friendly retry options for invalid inputs
 - Elegant program flow with homepage navigation
 
+## Getting Started
 
+### Prerequisites
 
-\## Getting Started
+- Java Development Kit (JDK) 8 or higher
+- Command line interface (Terminal/Command Prompt)
 
+### Installation
 
-
-\### Prerequisites
-
-
-
-\- Java Development Kit (JDK) 8 or higher
-
-\- Command line interface (Terminal/Command Prompt)
-
-
-
-\### Installation
-
-
-
-1\. Clone the repository:
+1. Clone the repository:
 
 ```bash
-
 git clone https://github.com/PasinduOG/iCalc-Converter.git
-
 ```
 
-
-
-2\. Navigate to the project directory:
-
+2. Navigate to the project directory:
 ```bash
-
 cd iCalc-Converter
-
 ```
 
-
-
-3\. Compile the Java file:
-
+3. Compile the Java file:
 ```bash
-
 javac ICalc.java
-
 ```
 
-
-
-4\. Run the application:
-
+4. Run the application:
 ```bash
-
 java ICalc
-
 ```
 
-
-
-\## Usage
-
-
+## Usage
 
 When you run the application, you'll see the main menu with the following options:
 
-
-
 ```
-
-\[01] Decimal Converter
-
-\[02] Binary Converter
-
-\[03] Octal Converter
-
-\[04] Hexadecimal Converter
-
-\[05] Roman Number Converter
-
+[01] Decimal Converter
+[02] Binary Converter
+[03] Octal Converter
+[04] Hexadecimal Converter
+[05] Roman Number Converter
 ```
-
-
 
 ### Example Usage
 
@@ -127,8 +85,6 @@ When you run the application, you'll see the main menu with the following option
      - Option 1: Decimal to Roman (e.g., 42 → XLII)
      - Option 2: Roman to Decimal (e.g., XLII → 42)
 
-
-
 ### Supported Number Systems & Validation
 
 - **Decimal**: Positive integers (1 and above)
@@ -138,8 +94,6 @@ When you run the application, you'll see the main menu with the following option
 - **Roman Numerals**: Standard Roman numerals with subtractive notation support
   - Supports: I(1), V(5), X(10), L(50), C(100), D(500), M(1000)
   - Subtractive pairs: IV(4), IX(9), XL(40), XC(90), CD(400), CM(900)
-
-
 
 ## Project Structure
 
@@ -158,24 +112,6 @@ The application is implemented as a single Java class with:
 - Individual converter methods with validation
 - Error handling and user retry logic
 - Clean program flow with homepage navigation
-
-
-
-\## Contributing
-
-
-
-1\. Fork the repository
-
-2\. Create a feature branch (`git checkout -b feature/new-feature`)
-
-3\. Commit your changes (`git commit -am 'Add new feature'`)
-
-4\. Push to the branch (`git push origin feature/new-feature`)
-
-5\. Create a Pull Request
-
-
 
 ## Current Status
 
@@ -226,39 +162,28 @@ The application is implemented as a single Java class with:
 - [ ] Develop GUI version
 - [ ] Add conversion history feature
 
+## Contributing
 
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
 
-\## License
+## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Author
 
-This project is licensed under the MIT License - see the \[LICENSE](LICENSE) file for details.
+**PasinduOG**
+- GitHub: [@PasinduOG](https://github.com/PasinduOG)
 
+## Acknowledgments
 
-
-\## Author
-
-
-
-\*\*PasinduOG\*\*
-
-\- GitHub: \[@PasinduOG](https://github.com/PasinduOG)
-
-
-
-\## Acknowledgments
-
-
-
-\- Thanks to the Java community for excellent documentation
-
-\- ASCII art generated for the application interface
-
-
+- Thanks to the Java community for excellent documentation
+- ASCII art generated for the application interface
 
 ---
 
-
-
-\*Happy Converting! 🔢\*
-
+*Happy Converting! 🔢*
