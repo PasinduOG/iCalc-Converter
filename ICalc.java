@@ -258,7 +258,6 @@ class ICalc{
 								break;
 							}
 						}
-						
 					}
 					break;
 				}
@@ -270,24 +269,220 @@ class ICalc{
 					System.out.println("|              Hexadecimal Converter              |");
 					System.out.println("+-------------------------------------------------+");
 					
-					System.out.print("\n\nEnter an octal number: ");
+					System.out.print("\n\nEnter an Hexadecimal number: ");
 					String h=scanner.next();
-					int hexNum=Integer.parseInt(h, 16);
 					
+					boolean valid = true;
+					for (int i = 0; i < h.length(); i++) {
+						char ch = h.charAt(i);
+						if (!((ch>='0' && ch<='9') || (ch>='A' && ch<='F') || (ch>='a' && ch<='f'))) {
+							valid = false;
+							break;
+						}
+					}
 					
+					if(valid){
+						int decimalNumber=Integer.parseInt(h,16);
+						int d=decimalNumber;
+						int temp=decimalNumber;
+						
+						String binary="";
+						do{
+							binary=d%2+binary;
+							d/=2;
+						}while(d!=0);
+						
+						String octal="";
+						do{
+							octal=temp%8+octal;
+							temp/=8;
+						}while(temp!=0);
+						
+						System.out.println("\n\tDecimal number: "+decimalNumber);
+						System.out.println("\tBinary number: "+binary);
+						System.out.println("\tOctal number: "+octal);
+					}else{
+						System.out.println("\tInvalid input...");
+						System.out.print("\nDo you want to input number again? (Y/N) -> ");
+						char ch = scanner.next().charAt(0);
+
+						if (ch=='Y' || ch=='y') {
+							continue;
+						} else {
+							break;
+						}
+					}
 					break;
 				}
 				break;
 				
 				case 5:
 				while(true){
-					System.out.println("+-------------------------------------------------+");
+					System.out.println("\n\n\n+-------------------------------------------------+");
 					System.out.println("|             Roman Number Converter              |");
 					System.out.println("+-------------------------------------------------+");
+					
+					System.out.println("\n\n\t[01] Decimal Number to Roman Number Converter\n");
+					System.out.println("\t[02] Roman number to Decimal Number Converter\n");
+					
+					System.out.print("\n\nEnter an option: ");
+					int option1=scanner.nextInt();
+					
+					switch(option1){
+						case 1:
+							while(true){
+								System.out.println("\n\n\n+------------------------------------------------+");
+								System.out.println("|    Decimal Number to Roman Number Converter    |");
+								System.out.println("+------------------------------------------------+");
+					
+								System.out.print("\n\nEnter an Decimal number: ");
+								int d=scanner.nextInt();
+								
+								String s="";
+								if (d>=1 && d<=1000){
+									while (d>=1000) {
+										s+="M";
+										d-=1000;
+									}
+									while (d>=900) {
+										s+="CM";
+										d-=900;
+									}
+									while (d>=500) {
+										s+="D";
+										d-=500;
+									}
+									while (d>=400) {
+										s+="CD";
+										d-=400;
+									}
+									while (d>=100) {
+										s+="C";
+										d-=100;
+									}
+									while (d>=90) {
+										s+="XC";
+										d-=90;
+									}
+									while (d>=50) {
+										s+="L";
+										d-=50;
+									}
+									while (d>=40) {
+										s+="XL";
+										d-=40;
+									}
+									while (d>=10) {
+										s+="X";
+										d-=10;
+									}
+									while (d>=9) {
+										s+="IX";
+										d-=9;
+									}
+									while (d>=5) {
+										s+="V";
+										d-=5;
+									}
+									while (d >= 4) {
+										s+="IV";
+										d-=4;
+									}
+									while (d>=1) {
+										s+="I";
+										d-=1;
+									}    
+									System.out.println("\n\tRoman numeral: "+s);
+								}else{
+									System.out.println("\tInvalid input...");
+									System.out.print("\nDo you want to input number again? (Y/N) -> ");
+									char ch = scanner.next().charAt(0);
+
+									if (ch=='Y' || ch=='y') {
+										continue;
+									} else {
+										break;
+									}
+								}
+								break;
+							}
+							break;
+						case 2:
+							WL1:while(true){
+								System.out.println("\n\n\n+------------------------------------------------+");
+								System.out.println("|    Roman Number to Decimal Number Converter    |");
+								System.out.println("+------------------------------------------------+");
+					
+								System.out.print("\n\nEnter an Roman number: ");
+								String r=scanner.next().toUpperCase();
+								
+								int decimal=0;
+								
+								for(int i=0; i<r.length(); i++){
+									char d=r.charAt(i);
+									
+									switch(d){
+										case 'M':
+											decimal+=1000;
+											break;
+										case 'D':
+											decimal+=500;
+											break;
+										case 'C':
+											decimal+=100;
+											break;
+										case 'L':
+											decimal+=50;
+											break;
+										case 'X':
+											decimal+=10;
+											break;
+										case 'V':
+											decimal+=5;
+											break;
+										case 'I':
+											decimal+=1;
+											break;
+										default:
+											System.out.println("\tInvalid input...");
+											System.out.print("\nDo you want to input number again? (Y/N) -> ");
+											char ch = scanner.next().charAt(0);
+
+											if (ch=='Y' || ch=='y') {
+												continue WL1;
+											} else {
+												break WL1;
+											}
+									}
+								}
+								if (r.contains("IV")){
+									decimal-=2;
+								}
+								if (r.contains("IX")){
+									decimal-=2;
+								}
+								if (r.contains("XL")){
+									decimal-=10;
+								}
+								if (r.contains("XC")){
+									decimal-=10;
+								}
+								if (r.contains("CD")){
+									decimal-=100;
+								}
+								if (r.contains("CM")){
+									decimal-=100;
+								}
+								System.out.println("\n\tDecimal number: "+decimal);
+								break;	
+							}
+							break;
+						default:
+							System.out.println("Invalid option");
+					}
 					break;
 				}
 				break;
-				
 				default:
 					System.out.println("Invalid option...");
 					continue;
